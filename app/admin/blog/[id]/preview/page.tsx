@@ -1,0 +1,3 @@
+import {notFound} from 'next/navigation';import {requireAdmin} from '@/lib/auth/require-admin';import {createServerClient} from '@/lib/supabase/server';import {RichText} from '@/components/content/RichText';
+export const metadata={robots:{index:false,follow:false}};
+export default async function BlogPreview({params}:{params:Promise<{id:string}>}){await requireAdmin();const{id}=await params;const client=await createServerClient();const{data}=await client.from('blog_posts').select('*').eq('id',id).maybeSingle();if(!data)notFound();const post:any=data;return <main className="legal article wrap"><p className="eyebrow">Protected preview · {post.status}</p><h1>{post.title}</h1><p>{post.excerpt}</p><RichText document={post.body}/></main>}

@@ -1,0 +1,1 @@
+import{requireAdmin}from'@/lib/auth/require-admin';import{AdminNav}from'@/components/admin/AdminNav';import{ProjectEditor}from'@/components/admin/ProjectEditor';export default async function NewProject(){await requireAdmin();return <><AdminNav/><section><p className="eyebrow">New proof</p><h1>Create a project</h1><ProjectEditor/></section></>}

@@ -1,0 +1,1 @@
+import{requireAdmin}from'@/lib/auth/require-admin';import{AdminNav}from'@/components/admin/AdminNav';import{TestimonialEditor}from'@/components/admin/TestimonialEditor';export default async function NewTestimonial(){await requireAdmin();return <><AdminNav/><section><p className="eyebrow">New feedback</p><h1>Create a testimonial</h1><TestimonialEditor/></section></>}

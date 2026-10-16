@@ -1,0 +1,1 @@
+import{getPublishedPosts}from'@/lib/content/blog-queries';import{buildRss}from'@/lib/seo/rss';import{siteUrl}from'@/lib/seo/metadata';export const dynamic='force-dynamic';export async function GET(){return new Response(buildRss(await getPublishedPosts(),siteUrl()),{headers:{'Content-Type':'application/rss+xml; charset=utf-8','Cache-Control':'no-store'}})}
