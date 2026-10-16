@@ -1,0 +1,1 @@
+import{expect,test}from'@playwright/test';test('omits testimonials when none are published',async({page})=>{await page.goto('/');await expect(page.getByRole('heading',{name:'Client stories'})).toHaveCount(0)});test('protects testimonial editing',async({page})=>{await page.goto('/admin/testimonials/new');await expect(page).toHaveURL(/\/admin\/login/)});

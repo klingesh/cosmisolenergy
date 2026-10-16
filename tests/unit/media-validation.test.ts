@@ -1,0 +1,2 @@
+import {describe,expect,it} from 'vitest';import {validateImage} from '@/lib/media/validation';
+describe('validateImage',()=>{it.each(['image/jpeg','image/png','image/webp'])('accepts %s',(type)=>expect(validateImage({name:'solar.webp',type,size:1024})).toEqual({ok:true}));it('rejects oversized files',()=>expect(validateImage({name:'large.webp',type:'image/webp',size:10_485_761})).toMatchObject({ok:false}));it('rejects unsupported files',()=>expect(validateImage({name:'solar.svg',type:'image/svg+xml',size:100})).toMatchObject({ok:false}))});
