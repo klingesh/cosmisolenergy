@@ -1,0 +1,1 @@
+import Link from'next/link';export function ProjectCard({project}:{project:any}){return <article className="content-card"><p className="eyebrow">{project.project_type}</p><h2><Link href={`/projects/${project.slug}`}>{project.title}</Link></h2><p>{project.location} · {project.capacity_value} {project.capacity_unit}</p><p>{project.summary}</p></article>}

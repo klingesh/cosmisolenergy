@@ -1,0 +1,1 @@
+import{BlogCard}from'./BlogCard';export function LatestPosts({posts}:{posts:any[]}){if(!posts.length)return null;return <section className="section wrap"><p className="eyebrow">From the journal</p><h2>Latest solar guidance</h2><div className="content-grid">{posts.slice(0,3).map(p=><BlogCard post={p} key={p.id}/>)}</div></section>}

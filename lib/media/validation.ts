@@ -1,0 +1,2 @@
+export const MAX_IMAGE_BYTES=10*1024*1024;const allowed=new Set(['image/jpeg','image/png','image/webp']);
+export function validateImage(file:{name:string;type:string;size:number}){if(!allowed.has(file.type))return{ok:false as const,error:'Upload a JPEG, PNG or WebP image.'};if(file.size>MAX_IMAGE_BYTES)return{ok:false as const,error:'Image must be 10 MB or smaller.'};if(file.size<=0)return{ok:false as const,error:'Image is empty.'};return{ok:true as const}}

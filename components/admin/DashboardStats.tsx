@@ -1,0 +1,1 @@
+export function DashboardStats({drafts=0,published=0}:{drafts?:number;published?:number}){return <div className="dashboard-stats"><article><strong>{drafts}</strong><span>Drafts</span></article><article><strong>{published}</strong><span>Published</span></article></div>}

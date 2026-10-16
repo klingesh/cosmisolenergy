@@ -1,0 +1,3 @@
+import Image from 'next/image';
+const brands=[['waaree.png','Waaree'],['tata.jpg','Tata Power Solar'],['vikram.png','Vikram Solar'],['adani.png','Adani Solar'],['reliance.png','Reliance Industries'],['polycab.png','Polycab'],['sungrow.svg','Sungrow']];
+export function BrandRail(){return <section className="brands"><p className="eyebrow">Brands we work with</p><div className="brands__window"><div className="brands__track">{[...brands,...brands].map(([src,alt],i)=><Image key={`${src}-${i}`} src={`/images/brands/${src}`} alt={i<brands.length?'':alt} aria-hidden={i>=brands.length} width={150} height={55} />)}</div></div></section>}

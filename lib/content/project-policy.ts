@@ -1,0 +1,1 @@
+export function publicProjectFilter(){return{status:'published' as const}}export function projectPublicationData(status:'draft'|'published',publishedAt:string|null,now=new Date()){return{status,published_at:publishedAt??(status==='published'?now.toISOString():null)}}

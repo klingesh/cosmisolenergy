@@ -1,0 +1,1 @@
+export function ProjectGallery({images}:{images:any[]}){return <div className="project-gallery">{images.sort((a,b)=>a.display_order-b.display_order).map(image=><img key={image.id??image.image_url} src={image.image_url} alt={image.alt_text} width={image.width} height={image.height}/>)}</div>}

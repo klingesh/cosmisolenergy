@@ -1,0 +1,1 @@
+export function TestimonialCard({testimonial}:{testimonial:any}){return <figure className="testimonial-card"><blockquote>“{testimonial.quote}”</blockquote><figcaption><strong>{testimonial.customerName}</strong>{testimonial.attribution&&<span>{testimonial.attribution}</span>}</figcaption></figure>}
